@@ -7,8 +7,7 @@ HanaStress
 <p>see linux_prerequisites.txt file</p>
 <br>
 
-<h3>Installation</h3>
-==========
+### Installation
 <ul>
 <li>This requires you have the SAP HANA Database CLient Installed on your machine</li>
 <li>Run <code>git clone https://github.com/rodolphe-alt/hanastress.git /opt/hanastress</code></li>
@@ -16,8 +15,7 @@ HanaStress
 
 <h3>Running HanaStress</h3>
 <h5>Example 1: View Help</h5>
-```
-root@hana01:/opt# /opt/hanastress/hanastress.py -h
+```root@server:/opt# /opt/hanastress/hanastress.py -h
 Usage: hanastress.py [options]
 
 Options:
@@ -46,9 +44,6 @@ Options:
 ```
 
 <h5>Example 2: Generating Data</h5>
-```
-/opt/hanastress/hanastress.py -v --host localhost -i 00 -u HANASTRESS -p MYPASSWORD -g anarchy --tables 100 --rows 100000 --threads 10
+```/opt/hanastress/hanastress.py -v --host localhost -i 00 -u HANASTRESS -p MYPASSWORD -g anarchy --tables 100 --rows 100000 --threads 10
 ```
 This will create 100 tables with 100000 rows of information each, using 10 threads.
-```
-# hanastress
