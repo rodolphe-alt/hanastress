@@ -1,9 +1,12 @@
-import dbapi
+#import dbapi
+from hdbcli import dbapi
 import sys
 import random
 import util.printUtil
 import util.miscUtils
 import generators.sql.queries
+#import socket
+#socket.setdefaulttimeout(90) # sets timeout to 10 seconds
 
 class DatabaseUtils:
 
@@ -34,7 +37,8 @@ class DatabaseUtils:
         #Create the user and grant access to monitoring views
         try:
             #Create the database connetion to HANA
-            self.connection = dbapi.connect(hostname, int('3' + instance + '15'), user, password)
+            #self.connection = dbapi.connect(hostname, int('3' + instance + '15'), user, password)
+            self.connection = dbapi.connect(hostname, int('3' + instance + '44'), user, password, connectTimeout=0)
 
             #get a cursor
             self.cursor = self.connection.cursor()
@@ -44,9 +48,9 @@ class DatabaseUtils:
                 self.disconnect()
                 sys.exit(1)
 
-        except  dbapi.Error as e:
+        except  Exception as e:
             self.printUtil.err("CONNECTION", "Unable to connect to DB")
-            print '"' + e[1] + '"'
+            print (e)
             sys.exit(1)
 
         return True
@@ -176,7 +180,7 @@ class DatabaseUtils:
             self.cursor.execute(query)
             return True
         except  dbapi.Error as e:
-            print e
+            print (e)
             sys.exit(1)
 
     def select(self, query):
@@ -184,5 +188,5 @@ class DatabaseUtils:
             self.cursor.execute(query)
             return self.cursor.fetchall()
         except  dbapi.Error as e:
-            print e
+            print (e)
             sys.exit(1)

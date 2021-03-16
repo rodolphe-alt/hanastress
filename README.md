@@ -2,12 +2,16 @@ HanaStress
 ==========
 
 <p>A testing tool for SAP HANA. This tool can be very destructive and should never go near production systems. Use at your own risk.</p>
+<p>NEW RELEASE 2021 for PYTHON 3</p>
+<br>
+<p>see linux_prerequisites.txt file</p>
+<br>
 
 <h3>Installation</h3>
 ==========
 <ul>
 <li>This requires you have the SAP HANA Database CLient Installed on your machine</li>
-<li>Run <code>git clone https://github.com/Centiq/HanaStress.git /opt/hanastress</code></li>
+<li>Run <code>git clone https://github.com/rodolphe-alt/hanastress.git /opt/hanastress</code></li>
 </ul>
 
 <h3>Running HanaStress</h3>
@@ -45,4 +49,6 @@ Options:
 ```
 /opt/hanastress/hanastress.py -v --host localhost -i 00 -u HANASTRESS -p MYPASSWORD -g anarchy --tables 100 --rows 100000 --threads 10
 ```
-<p>This will create 100 tables with 100000 rows of information each, using 10 threads.</p>
+This will create 100 tables with 100000 rows of information each, using 10 threads.
+```
+# hanastress

@@ -1,0 +1,33 @@
+curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+python get-pip.py
+yum install python3-pip
+ln -s /usr/bin/pip3 /usr/bin/pip
+impyla
+dbapi
+pip3 install thread6
+pip install hdbcli
+
+root# pip -V
+pip 9.0.3 from /usr/lib/python3.6/site-packages (python 3.6)
+
+# pip list
+bitarray (1.7.0)
+certifi (2020.12.5)
+chardet (4.0.0)
+dbapi (0.0.14)
+hdbcli (2.7.23)
+idna (2.10)
+impala (0.2)
+impyla (0.16.3)
+lxml (4.6.2)
+pip (9.0.3)
+ply (3.11)
+requests (2.25.1)
+setuptools (39.2.0)
+six (1.15.0)
+thread6 (0.2.0)
+thriftpy2 (0.4.14)
+urllib3 (1.26.3)
+[root@xsrv05 generators]#
+
+

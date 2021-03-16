@@ -3,7 +3,10 @@ import util.printUtil
 import util.miscUtils
 import random
 import sys
-import thread
+#import thread
+#import thread6
+import threading
+import _thread
 import time
 
 class Generator:
@@ -145,7 +148,7 @@ class Generator:
                 self.activeThreads += 1
                 count += 1
                 # Add dummy data to table
-                thread.start_new_thread( self.addAnarchyRows, ("thread-" + str(count), self.schema_name, table_name, ["INT", "INT", "DATE", "INT", "DECIMAL", "DECIMAL"], self.rows) )
+                _thread.start_new_thread( self.addAnarchyRows, ("thread-" + str(count), self.schema_name, table_name, ["INT", "INT", "DATE", "INT", "DECIMAL", "DECIMAL"], self.rows) )
             else:
                 time.sleep(0.1)
 
