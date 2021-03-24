@@ -15,7 +15,9 @@ HanaStress
 
 <h3>Running HanaStress</h3>
 <h5>Example 1: View Help</h5>
-```root@server:/opt# /opt/hanastress/hanastress.py -h
+```
+
+root@server:/opt# /opt/hanastress/hanastress.py -h
 Usage: hanastress.py [options]
 
 Options:
@@ -44,6 +46,8 @@ Options:
 ```
 
 <h5>Example 2: Generating Data</h5>
-```/opt/hanastress/hanastress.py -v --host localhost -i 00 -u HANASTRESS -p MYPASSWORD -g anarchy --tables 100 --rows 100000 --threads 10
+```
+
+/opt/hanastress/hanastress.py -v --host localhost -i 00 -u HANASTRESS -p MYPASSWORD -g anarchy --tables 100 --rows 100000 --threads 10
 ```
 This will create 100 tables with 100000 rows of information each, using 10 threads.
